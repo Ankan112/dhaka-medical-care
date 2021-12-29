@@ -8,7 +8,7 @@ const AboutUs = () => {
         <>
             <Navigation></Navigation>
             <Container>
-                <Grid container spacing={3}>
+                <Grid sx={{ marginTop: '50px' }} container spacing={3}>
                     <Grid item xs={12} md={6}>
                         <img src={about} style={{ width: '100%', marginTop: '20px' }} alt="" />
                     </Grid>
