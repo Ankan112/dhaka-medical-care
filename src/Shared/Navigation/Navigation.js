@@ -35,7 +35,7 @@ const Navigation = () => {
         setAnchorElUser(null);
     };
     return (
-        <AppBar position="static">
+        <AppBar sx={{ position: 'fixed' }} >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
@@ -83,7 +83,7 @@ const Navigation = () => {
                             ))} */}
                             <nav>
                                 <NavLink style={{ textDecoration: 'none' }} to='/home'><Button sx={{ color: 'black' }}>Home</Button></NavLink><br />
-                                <NavLink style={{ textDecoration: 'none' }} to='/services'><Button sx={{ color: 'black' }}>Services</Button></NavLink> <br />
+                                <NavLink style={{ textDecoration: 'none' }} to='/navservices'><Button sx={{ color: 'black' }}>Services</Button></NavLink> <br />
                                 <NavLink style={{ textDecoration: 'none' }} to='/home'><Button sx={{ color: 'black' }}>Home</Button></NavLink>
                                 <br />
                                 <NavLink style={{ textDecoration: 'none' }} to='/login'><Button sx={{ color: 'black' }}>Login</Button></NavLink>
@@ -101,8 +101,9 @@ const Navigation = () => {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         <nav>
                             <NavLink style={{ textDecoration: 'none' }} to='/home'><Button sx={{ color: 'white' }}>Home</Button></NavLink>
-                            <NavLink style={{ textDecoration: 'none' }} to='/services'><Button sx={{ color: 'white' }}>Services</Button></NavLink>
-                            <NavLink style={{ textDecoration: 'none' }} to='/home'><Button sx={{ color: 'white' }}>Home</Button></NavLink>
+                            <NavLink style={{ textDecoration: 'none' }} to='/navservices'><Button sx={{ color: 'white' }}>Services</Button></NavLink>
+                            <NavLink style={{ textDecoration: 'none' }} to='/about'><Button sx={{ color: 'white' }}>About</Button></NavLink>
+                            <NavLink style={{ textDecoration: 'none' }} to='/contact'><Button sx={{ color: 'white' }}>Contact Us</Button></NavLink>
                             <NavLink style={{ textDecoration: 'none' }} to='/login'><Button sx={{ color: 'white' }}>Login</Button></NavLink>
                         </nav>
                     </Box>
