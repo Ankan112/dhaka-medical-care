@@ -1,0 +1,44 @@
+[
+    {
+      "id":1,
+      "name":"X-ray",
+      "img":"https://i.ibb.co/8m9hnFm/X-ray-image-of-shoulder.jpg",
+      "price":99,
+      "description":"X-rays are produced due to sudden deceleration of fast-moving electrons when they collide and interact with the target anode."
+    },
+    {
+      "id":2,
+      "name":"Bandaging",
+      "img":"https://i.ibb.co/vkxTtf8/Man-with-broken-leg-at-home.jpg",
+      "price":130,
+      "description":"A bandage is used to hold a dressing in place over a wound, to create pressure over a bleeding wound for control of hemor- rhage, to secure a splint to an injured part of the body, and to provide support to an injured part."
+    },
+    {
+      "id":3,
+      "name":"Relief from Pain",
+      "img":"https://i.ibb.co/5YbQVwL/Businessman-working-sitting-at-desk-feels-unhealthy-suffers-from-lower-back-pain-Damage-of-intervert.jpg",
+      "price":39,
+      "description":"Aspirin, naproxen (Aleve), and ibuprofen (Advil, Motrin) are examples of OTC NSAIDs. If OTC medicines do not relieve your pain, your doctor may prescribe something stronger."
+    },
+    {
+      "id":4,
+      "name":"Cancer Treatment",
+      "img":"https://i.ibb.co/m82m3JT/Cancer-outbreak-and-treatment-for-malignant-cancer-cells-in-a-human-body-caused-by-carcinogens-and-g.jpg",
+      "price":599,
+      "description":"Some people with cancer will have only one treatment. But most people have a combination of treatments, such as surgery with chemotherapy and/or radiation therapy."
+    },
+    {
+      "id":5,
+      "name":"Teeth Pain",
+      "img":"https://i.ibb.co/BC9bBSx/Shot-of-a-young-woman-suffering-from-toothache-while-sitting-in-the-dentist-s-chair.jpg",
+      "price":80,
+      "description":"A toothache is a pain in or around a tooth. Minor toothaches can come from a temporary gum irritation that you can treat at home."
+    },
+    {
+      "id":6,
+      "name":"Ambulance Service",
+      "img":"https://i.ibb.co/jLSk7dq/Portrait-of-a-paramedic-healthcare-worker-nurse-woman-wearing-a-surgical-face-mask-working-nightshif.jpg",
+      "price":30,
+      "description":"As the ambulance moves away from you, the distance between you (the observer) and the siren (source of the sound) increases."
+    }
+  ]
