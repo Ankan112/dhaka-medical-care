@@ -12,11 +12,13 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { NavLink } from 'react-router-dom';
-
+import useAuth from '../../Components/hooks/useAuth'
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Navigation = () => {
+    const { user, logOut } = useAuth();
+    console.log(user)
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -83,10 +85,17 @@ const Navigation = () => {
                             ))} */}
                             <nav>
                                 <NavLink style={{ textDecoration: 'none' }} to='/home'><Button sx={{ color: 'black' }}>Home</Button></NavLink><br />
-                                <NavLink style={{ textDecoration: 'none' }} to='/navservices'><Button sx={{ color: 'black' }}>Services</Button></NavLink> <br />
-                                <NavLink style={{ textDecoration: 'none' }} to='/home'><Button sx={{ color: 'black' }}>Home</Button></NavLink>
-                                <br />
-                                <NavLink style={{ textDecoration: 'none' }} to='/login'><Button sx={{ color: 'black' }}>Login</Button></NavLink>
+                                <NavLink style={{ textDecoration: 'none' }} to='/navservices'><Button sx={{ color: 'black' }}>Services</Button></NavLink><br />
+                                <NavLink style={{ textDecoration: 'none' }} to='/about'><Button sx={{ color: 'black' }}>About</Button></NavLink><br />
+                                <NavLink style={{ textDecoration: 'none' }} to='/contact'><Button sx={{ color: 'black' }}>Contact Us</Button></NavLink><br />
+                                {
+                                    user?.email ?
+                                        <Box> <Button onClick={logOut} sx={{ color: 'black' }}>Logout</Button>
+                                            <Typography sx={{ paddingLeft: '7px' }} variant='h6'>{user.displayName}</Typography>
+                                        </Box>
+                                        :
+                                        <NavLink style={{ textDecoration: 'none' }} to='/login'><Button sx={{ color: 'black' }}>Login</Button></NavLink>
+                                }
                             </nav>
                         </Menu>
                     </Box>
@@ -104,7 +113,17 @@ const Navigation = () => {
                             <NavLink style={{ textDecoration: 'none' }} to='/navservices'><Button sx={{ color: 'white' }}>Services</Button></NavLink>
                             <NavLink style={{ textDecoration: 'none' }} to='/about'><Button sx={{ color: 'white' }}>About</Button></NavLink>
                             <NavLink style={{ textDecoration: 'none' }} to='/contact'><Button sx={{ color: 'white' }}>Contact Us</Button></NavLink>
-                            <NavLink style={{ textDecoration: 'none' }} to='/login'><Button sx={{ color: 'white' }}>Login</Button></NavLink>
+                            {
+                                user?.email ?
+                                    <Box sx={{ display: 'inline' }}> <Button onClick={logOut} sx={{ color: 'white' }}>Logout</Button>
+                                        <Typography sx={{ display: 'inline' }} variant='h6'>{user.displayName}</Typography>
+                                    </Box>
+                                    :
+                                    <NavLink style={{ textDecoration: 'none' }} to='/login'><Button sx={{ color: 'white' }}>Login</Button></NavLink>
+                            }
+
+
+
                         </nav>
                     </Box>
 

@@ -11,7 +11,7 @@ const TopBanner = () => {
                 <Grid sx={{ paddingBottom: '90px' }} container spacing={2}>
                     <Grid sx={{ textAlign: 'left' }} item xs={12} md={6}>
 
-                        <Typography sx={{ color: 'white', marginTop: '90px' }} variant="h3">
+                        <Typography sx={{ color: 'white', marginTop: '130px' }} variant="h3">
                             Dhaka Medical Care
                         </Typography>
                         <Typography sx={{ color: '#E5E8E8', marginTop: '20px', fontSize: '18px' }}>
@@ -21,7 +21,7 @@ const TopBanner = () => {
 
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <img style={{ width: '100%', marginTop: '90px' }} src={img} alt="" />
+                        <img style={{ width: '100%', marginTop: '130px' }} src={img} alt="" />
                     </Grid>
                 </Grid>
             </Container>
