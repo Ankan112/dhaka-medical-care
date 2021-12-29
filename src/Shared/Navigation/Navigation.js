@@ -44,7 +44,7 @@ const Navigation = () => {
                         component="div"
                         sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
                     >
-                        LOGO
+                        Dhaka Medical Care
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -82,11 +82,11 @@ const Navigation = () => {
                                 </MenuItem>
                             ))} */}
                             <nav>
-                                <NavLink to='/home'><Button sx={{ color: 'black', textDecoration: 'none' }}>Home</Button></NavLink><br />
-                                <NavLink to='/services'><Button sx={{ color: 'black', textDecoration: 'none' }}>Services</Button></NavLink> <br />
-                                <NavLink to='/home'><Button sx={{ color: 'black', textDecoration: 'none' }}>Home</Button></NavLink>
+                                <NavLink style={{ textDecoration: 'none' }} to='/home'><Button sx={{ color: 'black' }}>Home</Button></NavLink><br />
+                                <NavLink style={{ textDecoration: 'none' }} to='/services'><Button sx={{ color: 'black' }}>Services</Button></NavLink> <br />
+                                <NavLink style={{ textDecoration: 'none' }} to='/home'><Button sx={{ color: 'black' }}>Home</Button></NavLink>
                                 <br />
-                                <NavLink to='/login'><Button sx={{ color: 'black', textDecoration: 'none' }}>Login</Button></NavLink>
+                                <NavLink style={{ textDecoration: 'none' }} to='/login'><Button sx={{ color: 'black' }}>Login</Button></NavLink>
                             </nav>
                         </Menu>
                     </Box>
@@ -96,14 +96,14 @@ const Navigation = () => {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                     >
-                        LOGO
+                        Dhaka Medical Care
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         <nav>
-                            <NavLink to='/home'><Button sx={{ color: 'white', textDecoration: 'none' }}>Home</Button></NavLink>
-                            <NavLink to='/services'><Button sx={{ color: 'white', textDecoration: 'none' }}>Services</Button></NavLink>
-                            <NavLink to='/home'><Button sx={{ color: 'white', textDecoration: 'none' }}>Home</Button></NavLink>
-                            <NavLink to='/login'><Button sx={{ color: 'white', textDecoration: 'none' }}>Login</Button></NavLink>
+                            <NavLink style={{ textDecoration: 'none' }} to='/home'><Button sx={{ color: 'white' }}>Home</Button></NavLink>
+                            <NavLink style={{ textDecoration: 'none' }} to='/services'><Button sx={{ color: 'white' }}>Services</Button></NavLink>
+                            <NavLink style={{ textDecoration: 'none' }} to='/home'><Button sx={{ color: 'white' }}>Home</Button></NavLink>
+                            <NavLink style={{ textDecoration: 'none' }} to='/login'><Button sx={{ color: 'white' }}>Login</Button></NavLink>
                         </nav>
                     </Box>
 

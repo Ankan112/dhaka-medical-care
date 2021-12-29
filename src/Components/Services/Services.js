@@ -12,7 +12,7 @@ const Services = () => {
     }, [])
     return (
         <Container>
-            <Typography sx={{ marginY: '40px', fontWeight: 'bold' }} variant='h4'>Our Popular Services</Typography>
+            <Typography sx={{ marginY: '40px' }} variant='h3'>Our Popular Services</Typography>
             <Grid container spacing={3}>
                 {
                     services.map(service => <Service
