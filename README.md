@@ -1,6 +1,6 @@
 # Dhaka Medical Care
-code link:
-live site:
+code link:https://github.com/Programming-Hero-Web-Course3/healthcare-related-website-Ankan112
+live site:https://dhaka-medical-care.web.app/
 
 1. About know our services details and also know price
 2. Appointment from home
