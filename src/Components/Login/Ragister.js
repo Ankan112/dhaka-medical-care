@@ -1,6 +1,6 @@
 import { Button, Container, Grid, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../Footer/Footer';
 import login from '../../img/login.jpg'
@@ -8,7 +8,8 @@ import useAuth from '../hooks/useAuth';
 
 const Ragister = () => {
     const [loginInfo, setLoginInfo] = useState({})
-    const { registerUser, user } = useAuth()
+    const { registerUser } = useAuth()
+    const navigate = useNavigate();
     // console.log(user.displayName)
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -23,7 +24,7 @@ const Ragister = () => {
             alert('Your password did not match')
             return
         }
-        registerUser(loginInfo.email, loginInfo.password, loginInfo.name);
+        registerUser(loginInfo.email, loginInfo.password, loginInfo.name, navigate);
         e.preventDefault();
 
     }
@@ -36,7 +37,7 @@ const Ragister = () => {
                         <img src={login} style={{ width: '100%', marginTop: '20px' }} alt="" />
                     </Grid>
                     <Grid item sx={{ textAlign: 'left' }} xs={12} md={6}>
-                        <Typography sx={{ marginTop: '110px' }} variant='h3'>Ragister</Typography>
+                        <Typography sx={{ marginTop: '110px' }} variant='h3'>Register</Typography>
                         <form onSubmit={handleLogIn}>
                             <TextField
                                 sx={{ width: '70%', marginY: '20px' }}
@@ -65,8 +66,8 @@ const Ragister = () => {
                                 name='password2'
                                 onBlur={handleOnBlur}
                                 variant="standard" />
-                            <Typography>Alreay Ragistered? Please<NavLink to='/login' style={{ textDecoration: 'none' }}><Button>Login</Button></NavLink></Typography>
-                            <Button type='submit' sx={{ width: '30%', marginTop: '20px' }} variant="contained">Ragister</Button>
+                            <Typography>Already Registered? Please<NavLink to='/login' style={{ textDecoration: 'none' }}><Button>Login</Button></NavLink></Typography>
+                            <Button type='submit' sx={{ width: '30%', marginTop: '20px' }} variant="contained">Register</Button>
                         </form>
                     </Grid>
                 </Grid>

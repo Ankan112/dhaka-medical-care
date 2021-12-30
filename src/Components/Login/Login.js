@@ -3,12 +3,14 @@ import React, { useState } from 'react';
 import Navigation from '../../Shared/Navigation/Navigation';
 import login from '../../img/login.jpg'
 import Footer from '../Footer/Footer';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 const Login = () => {
     const [loginInfo, setLoginInfo] = useState({})
-    const { loginUser, user, signInWithGoogle } = useAuth();
+    const { loginUser, signInWithGoogle } = useAuth();
+    const location = useLocation();
+    const navigate = useNavigate();
     // console.log(loginInfo)
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -18,12 +20,12 @@ const Login = () => {
         setLoginInfo(newLoginInfo)
     }
     const handleLogIn = e => {
-        loginUser(loginInfo.email, loginInfo.password)
+        loginUser(loginInfo.email, loginInfo.password, location, navigate)
         e.preventDefault();
 
     }
     const handleGoogleSignIn = () => {
-        signInWithGoogle()
+        signInWithGoogle(location, navigate)
     }
     return (
         <>

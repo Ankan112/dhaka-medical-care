@@ -13,6 +13,7 @@ import NavService from './Components/NavService/NavService';
 import Ragister from './Components/Login/Ragister';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
 
+
 function App() {
   return (
     <div className="App">

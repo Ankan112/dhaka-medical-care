@@ -6,12 +6,19 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ServicesModal from '../Components/ServicesModal/ServicesModal';
+import useAuth from '../Components/hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 const Service = ({ service }) => {
     const [openService, setServiceOpen] = React.useState(false);
     const handleServiceOpen = () => setServiceOpen(true);
     const handleServiceClose = () => setServiceOpen(false);
     const { name, img, price, description } = service;
+    const { user } = useAuth();
+
+    const navigate = useNavigate();
+
+
     return (
         <>
             <Grid item xs={12} md={4}>
@@ -32,7 +39,16 @@ const Service = ({ service }) => {
                         <Typography variant="body2" color="text.secondary">
                             {description}
                         </Typography>
-                        <Button onClick={handleServiceOpen} sx={{ marginTop: '30px' }} variant="contained">Details</Button>
+
+                        {
+                            user.email ? <Button onClick={handleServiceOpen} sx={{ marginTop: '30px' }} variant="contained">Details</Button>
+                                :
+                                <Button onClick={() => {
+                                    navigate('/login')
+                                }} sx={{ marginTop: '30px' }} variant="contained">Details</Button>
+                        }
+
+
                     </CardContent>
 
                 </Card>

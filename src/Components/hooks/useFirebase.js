@@ -14,7 +14,7 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
-    const registerUser = (email, password, name) => {
+    const registerUser = (email, password, name, navigate) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const newUser = { email, displayName: name };
@@ -29,33 +29,37 @@ const useFirebase = () => {
                     // An error occurred
                     // ...
                 });
+                navigate('/')
 
             })
             .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
+                // const errorCode = error.code;
+                // const errorMessage = error.message;
                 // ..
             });
     }
 
-    const loginUser = (email, password) => {
+    const loginUser = (email, password, location, navigate) => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+                const destination = location?.state?.from || '/'
+                navigate(destination)
                 // Signed in 
-                const user = userCredential.user;
+                // const user = userCredential.user;
                 // ...
             })
             .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
+                // const errorCode = error.code;
+                // const errorMessage = error.message;
             });
     }
 
-    const signInWithGoogle = () => {
+    const signInWithGoogle = (location, navigate) => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
-                const user = result.user;
-
+                // const user = result.user;
+                const destination = location?.state?.from || '/'
+                navigate(destination)
             }).catch((error) => {
 
 
@@ -65,14 +69,14 @@ const useFirebase = () => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
-                const uid = user.uid;
+                // const uid = user.uid;
                 setUser(user)
             } else {
                 setUser({})
             }
         });
         return () => unsubscribe;
-    }, [])
+    }, [auth])
     const logOut = () => {
         signOut(auth).then(() => {
             // Sign-out successful.
